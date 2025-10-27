@@ -1,19 +1,10 @@
 import './App.css';
-import Counter from '@/components/state/Counter';
-import Text from '@/components/state/Text';
-import Input from './components/state/Input';
-import Button from './components/state/Button';
+import ParentComponent from './components/state2/ParentComponent';
 
 function App() {
   return (
     <>
-      <Counter />
-      <hr />
-      <Text />
-      <hr />
-      <Input />
-      <hr />
-      <Button />
+      <ParentComponent />
     </>
   );
 }
