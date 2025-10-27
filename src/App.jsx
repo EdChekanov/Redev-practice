@@ -1,10 +1,16 @@
 import './App.css';
-import ParentComponent from './components/state2/ParentComponent';
+import Cart from './components/state3/Cart';
+import TaskList from './components/state3/TaskList';
+import UserProfile from './components/state3/UserProfile';
 
 function App() {
   return (
     <>
-      <ParentComponent />
+      <UserProfile />
+      <hr />
+      <TaskList />
+      <hr />
+      <Cart />
     </>
   );
 }
