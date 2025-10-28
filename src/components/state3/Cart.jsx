@@ -12,6 +12,7 @@ const Cart = () => {
       <ul>
         {cart.map((product) => (
           <li
+            key={product.id}
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -21,14 +22,10 @@ const Cart = () => {
             <button
               onClick={() =>
                 setCart((c) =>
-                  [
-                    ...c.filter((item) => item.title !== product.title),
-                    {
-                      id: product.id,
-                      title: product.title,
-                      count: product.count + 1,
-                    },
-                  ].sort((a, b) => a.id - b.id)
+                  c.map((item) => ({
+                    ...item,
+                    count: item.id === product.id ? item.count + 1 : item.count,
+                  }))
                 )
               }
             >

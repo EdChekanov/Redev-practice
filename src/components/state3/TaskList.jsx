@@ -7,8 +7,10 @@ const TaskList = () => {
     <>
       <h1>Task List</h1>
       <ul style={{ display: 'flex' }}>
-        {tasks.map((task) => (
-          <li style={{ marginLeft: '20px' }}>{task}</li>
+        {tasks.map((task, id) => (
+          <li key={id} style={{ marginLeft: '20px' }}>
+            {task}
+          </li>
         ))}
       </ul>
       <button onClick={() => setTasks((tasks) => [...tasks, generateTask()])}>
