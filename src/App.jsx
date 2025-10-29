@@ -1,16 +1,13 @@
 import './App.css';
-import Cart from './components/state3/Cart';
-import TaskList from './components/state3/TaskList';
-import UserProfile from './components/state3/UserProfile';
+import LifecycleComponent from './components/life-cycle3/LifecycleComponent';
+import LifecycleFnComponent from './components/life-cycle3/LifecycleFnComponent';
 
 function App() {
   return (
     <>
-      <UserProfile />
+      <LifecycleComponent />
       <hr />
-      <TaskList />
-      <hr />
-      <Cart />
+      <LifecycleFnComponent />
     </>
   );
 }
