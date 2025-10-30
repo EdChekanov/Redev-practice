@@ -1,13 +1,10 @@
 import './App.css';
-import LifecycleComponent from './components/life-cycle3/LifecycleComponent';
-import LifecycleFnComponent from './components/life-cycle3/LifecycleFnComponent';
+import Gallery from './components/life-cycle2/Gallery';
 
 function App() {
   return (
     <>
-      <LifecycleComponent />
-      <hr />
-      <LifecycleFnComponent />
+      <Gallery />
     </>
   );
 }
