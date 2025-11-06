@@ -1,7 +1,4 @@
-// import { useState } from 'react';
-
 const List = ({ data, setData }) => {
-  // const [list, setList] = useState(data);
   return (
     <>
       <ul style={{ display: 'flex' }}>
