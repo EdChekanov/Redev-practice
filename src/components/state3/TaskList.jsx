@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import TaskItem from './TaskItem';
+
 const TaskList = () => {
   const [tasks, setTasks] = useState(['Купить хлеб', 'Погулять с собакой']);
 
@@ -7,10 +9,8 @@ const TaskList = () => {
     <>
       <h1>Task List</h1>
       <ul style={{ display: 'flex' }}>
-        {tasks.map((task, id) => (
-          <li key={id} style={{ marginLeft: '20px' }}>
-            {task}
-          </li>
+        {tasks.map((task, idx) => (
+          <TaskItem task={task} key={idx} />
         ))}
       </ul>
       <button onClick={() => setTasks((tasks) => [...tasks, generateTask()])}>

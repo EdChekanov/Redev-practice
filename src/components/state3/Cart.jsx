@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import CartItem from './CartItem';
+
 const Cart = () => {
   const [cart, setCart] = useState([
     { id: 1, title: 'Футболка', count: 1 },
@@ -18,7 +20,7 @@ const Cart = () => {
               justifyContent: 'center',
             }}
           >
-            <p>{`${product.title} (Кол-во: ${product.count})`}</p>
+            <CartItem title={product.title} count={product.count} />
             <button
               onClick={() =>
                 setCart((c) =>
