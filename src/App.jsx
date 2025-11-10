@@ -1,30 +1,21 @@
-import UserProfile from './components/state3/UserProfile';
-import TaskList from './components/state3/TaskList';
-import Cart from './components/state3/Cart';
+import LanguageProvider from './providers/LanguageProvider';
+import ThemeProvider from './providers/Theme2Provider';
+import ControlsPanel from './components/context/ControlsPanel';
+import Header from './components/context/Header';
+import UserProfile from './components/context/UserProfile';
 
 import './App.css';
-import Toggle from './components/context/toggle';
-import { ThemeContext, themes } from './contexts/ThemeContext';
-
-Toggle;
 
 function App() {
   return (
     <>
-      <ThemeContext.Consumer>
-        {({ theme, setTheme }) => (
-          <Toggle
-            onChange={() => {
-              if (theme === themes.light) setTheme(themes.dark);
-              if (theme === themes.dark) setTheme(themes.light);
-            }}
-            value={theme === themes.dark}
-          />
-        )}
-      </ThemeContext.Consumer>
-      <UserProfile />
-      <TaskList />
-      <Cart />
+      <LanguageProvider>
+        <ThemeProvider>
+          <ControlsPanel />
+          <Header />
+          <UserProfile />
+        </ThemeProvider>
+      </LanguageProvider>
     </>
   );
 }
