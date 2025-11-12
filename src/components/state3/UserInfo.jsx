@@ -1,8 +1,7 @@
 import { memo } from 'react';
+import withRenderTracker from '../hoc/withRenderTracker';
 
-const UserInfo = memo(({ user }) => {
-  console.log('render UserInfo');
-
+const Func = memo(({ user }) => {
   return (
     <h2>
       Name: {user.name}, age: {user.age}, isActive:{' '}
@@ -10,5 +9,8 @@ const UserInfo = memo(({ user }) => {
     </h2>
   );
 });
+Func.name = 'UserInfo';
+
+const UserInfo = withRenderTracker(Func);
 
 export default UserInfo;

@@ -1,9 +1,9 @@
 import { memo } from 'react';
+import withRenderTracker from '../hoc/withRenderTracker';
 
-const CartItem = memo(({ title, count }) => {
-  console.log('render CartItem - ' + title);
+const Func = memo(({ title, count }) => <p>{`${title} (Кол-во: ${count})`}</p>);
+Func.name = 'CartItem';
 
-  return <p>{`${title} (Кол-во: ${count})`}</p>;
-});
+const CartItem = withRenderTracker(Func);
 
 export default CartItem;
